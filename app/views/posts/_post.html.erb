@@ -1,0 +1,7 @@
+<tr id="<%= post.id %>">
+        <td><%= post.title %></td>
+        <td><%= post.user.email %></td>
+        <td><%= link_to 'Show', post_path(post), data: { remote: true } %></td>
+        <td><%= link_to 'Edit', edit_post_path(post), data: { remote: true } %></td>
+        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Seguro?', remote: true } %></td>
+</tr>

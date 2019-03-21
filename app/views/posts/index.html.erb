@@ -1,0 +1,41 @@
+<h1>Posts</h1>
+
+<%= render 'form', post: @post %>
+
+<h2>Los posts</h2>
+
+<label for="busqueda">Buscar</label>
+<input name="busqueda" type="text" id="busqueda">
+
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>User</th>
+        </tr>
+    </thead>
+    <tbody>
+        <%= render @posts %>
+    </tbody>
+
+</table>
+
+<%= render 'modal_post' %>
+
+
+    <script>
+    $('#busqueda').keyup(function(){
+        if ($('#busqueda').val().length >=3){
+            $.ajax({
+                type: 'GET',
+                url: '<%= busqueda_path %>',
+                data: {'input': $('#busqueda').val()}
+            })          
+        }else{
+            $('tbody').html('<%= j render @posts %>')
+        }
+    });
+</script>
+
+

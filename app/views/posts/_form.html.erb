@@ -1,0 +1,13 @@
+
+<%= form_with(model: post) do |post| %>
+    <%= post.label :title %>
+    <br>
+    <%= post.text_field :title %>
+    <br>
+    <%= post.label :content %>
+    <br>
+    <%= post.text_area :content %>
+    <br>
+    <%= post.submit 'Enviar' %>
+
+<% end %>

@@ -1,0 +1,5 @@
+$('tbody').append("<%= j render 'posts/post', post: @post %>")
+
+// blanquear campo formulario
+$('#post_title').val('');
+$('#post_content').val('');
